@@ -1,20 +1,22 @@
-string= 'www.my_site.com#about'
-string=string.replace("#","/")
-print(string)
+"""Homework 5"""
+
+STRING= 'www.my_site.com#about'
+STRING=STRING.replace("#", "/")
+print(STRING)
 
 word=input("Введите слово: ")
 newword=word+"ing"
 print(newword)
 
-ivan="Ivanou Ivan"
-arr=ivan.split()
+IVAN= "Ivanou Ivan"
+arr=IVAN.split()
 arr.reverse()
-ivan=" ".join(arr)
-print(ivan)
+IVAN= " ".join(arr)
+print(IVAN)
 
 string1=input("Введите строку с пробелами в начале и конце:")
 string1=string1.strip()
 print(string1)
 
-baget="pARiS"
-print(baget.title())
+BAGET= "pARiS"
+print(BAGET.title())

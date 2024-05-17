@@ -18,7 +18,6 @@ STRING3 = " ".join(LIST3)
 print(STRING3)
 
 LIST4 = [1, 2, 3, 4, 5, "Hello", "Медоед", "Волк", 10.5, "Степан"]
-LIST4[2]= "Скунс"
+LIST4[2] = "Скунс"
 del LIST4[6]
 print(LIST4)
-

@@ -1,29 +1,30 @@
 """Cows and bulls"""
 
 import random
-repeat = 1
-random_number = ""
 
-while repeat == 1:
-    random_number = str(random.randint(1000, 9999 + 1))
-    repeat = 0
-    for i in random_number:
-        if random_number.count(i) > 1:
-            repeat = 1
-input_number = ""
-while input_number != random_number:
-    input_number = input("Введите ваше 4-значное число: ")
-    if len(input_number) == 4:
-        bulls_count = 0
+REPEAT = 1
+RANDOM_NUMBER = ""
+
+while REPEAT == 1:
+    RANDOM_NUMBER = str(random.randint(1000, 9999 + 1))
+    REPEAT = 0
+    for i in RANDOM_NUMBER:
+        if RANDOM_NUMBER.count(i) > 1:
+            REPEAT = 1
+INPUT_NUMBER = ""
+while INPUT_NUMBER != RANDOM_NUMBER:
+    INPUT_NUMBER = input("Введите ваше 4-значное число: ")
+    if len(INPUT_NUMBER) == 4:
+        BULLS_COUNT = 0
         for i in range(4):
-            if input_number[i] == random_number[i]:
-                bulls_count += 1
-        print("Быки:", bulls_count)
-        cows_count = - bulls_count
-        for i in input_number:
-            if i in random_number:
-               cows_count += 1
-        print("Коровы:",cows_count)
+            if INPUT_NUMBER[i] == RANDOM_NUMBER[i]:
+                BULLS_COUNT += 1
+        print("Быки:", BULLS_COUNT)
+        COWS_COUNT = -BULLS_COUNT
+        for i in INPUT_NUMBER:
+            if i in RANDOM_NUMBER:
+                COWS_COUNT += 1
+        print("Коровы:", COWS_COUNT)
     else:
         print("Введите число заново!")
 print("Вы выиграли!")

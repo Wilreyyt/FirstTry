@@ -1,7 +1,6 @@
 """Triangle"""
 
-a = "*"
+STAR = "*"
 N = 10
 for i in range(N):
-    print((a+a*i*2).center(N*2+1))
-    
+    print((STAR+STAR*i*2).center(N*2+1))

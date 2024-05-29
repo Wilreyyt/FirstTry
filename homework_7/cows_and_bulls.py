@@ -20,7 +20,8 @@ while INPUT_NUMBER != random_number:
         INPUT_NUMBER = input("Введите ваше 4-значное число: ")
         REPEAT = 0
         for character in INPUT_NUMBER:
-            if INPUT_NUMBER.count(character) > 1 or character < '0' or character > '9':
+            if (INPUT_NUMBER.count(character) > 1 or character < '0'
+            or character > '9'):
                 REPEAT = 1
 
     BULLS_COUNT = 0

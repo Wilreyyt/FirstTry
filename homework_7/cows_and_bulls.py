@@ -4,17 +4,17 @@
 import random
 
 REPEAT = 1
-RANDOM_NUMBER = ""
+random_number = ""
 
 while REPEAT == 1:
-    RANDOM_NUMBER = str(random.randint(1000, 9999 + 1))
+    random_number = str(random.randint(1000, 9999 + 1))
     REPEAT = 0
-    for character in RANDOM_NUMBER:
-        if RANDOM_NUMBER.count(character) > 1:
+    for character in random_number:
+        if random_number.count(character) > 1:
             REPEAT = 1
 
 INPUT_NUMBER = ""
-while INPUT_NUMBER != RANDOM_NUMBER:
+while INPUT_NUMBER != random_number:
     REPEAT = 1
     while REPEAT == 1 or len(INPUT_NUMBER) != 4:
         INPUT_NUMBER = input("Введите ваше 4-значное число: ")
@@ -25,13 +25,13 @@ while INPUT_NUMBER != RANDOM_NUMBER:
 
     BULLS_COUNT = 0
     for i in range(4):
-        if INPUT_NUMBER[i] == RANDOM_NUMBER[i]:
+        if INPUT_NUMBER[i] == random_number[i]:
             BULLS_COUNT += 1
     print("Быки:", BULLS_COUNT)
 
     COWS_COUNT = -BULLS_COUNT
     for j in INPUT_NUMBER:
-        if j in RANDOM_NUMBER:
+        if j in random_number:
             COWS_COUNT += 1
     print("Коровы:", COWS_COUNT)
 print("Вы выиграли!")

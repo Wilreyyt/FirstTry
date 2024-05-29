@@ -1,6 +1,7 @@
 """Triangle"""
+# pylint: disable-msg=C0103
 
-STAR = "*"
+star = "*"
 N = 10
 for i in range(N):
-    print((STAR+STAR*i*2).center(N*2+1))
+    print((star + star * i * 2).center(N * 2 + 1))

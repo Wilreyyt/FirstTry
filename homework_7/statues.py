@@ -1,15 +1,16 @@
 """Statues"""
+# pylint: disable-msg=C0103
 
 import random
-STATUES = []
+statues = []
 for i in range(4):
-    STATUE = 0
-    while STATUE == 0 or STATUE in STATUES:
-        STATUE = random.randint(1, 10)
-    STATUES.append(STATUE)
-print(STATUES)
-MISSING_STATUES = 0
-for i in range(min(STATUES), max(STATUES)):
-    if i not in STATUES:
-        MISSING_STATUES += 1
-print("Кол-во пропущенных статуй: ", MISSING_STATUES)
+    statue = 0
+    while statue == 0 or statue in statues:
+        statue = random.randint(1, 10)
+    statues.append(statue)
+print(statues)
+missing_statues = 0
+for i in range(min(statues), max(statues)):
+    if i not in statues:
+        missing_statues += 1
+print("Кол-во пропущенных статуй: ", missing_statues)

@@ -1,9 +1,15 @@
 """Sequence"""
 # pylint: disable-msg=C0103
 
-sequence = [1, 3, 4, 7, 2, 9, 15, 21]
-def solution():
-    pass
+def input_sequence():
+    sequence_length = int(input("Введите размер последовательности: "))
+    sequence_elements = []
+    for k in range(sequence_length):
+        element = int(input(f"Введите элемент {k + 1}: "))
+        sequence_elements.append(element)
+    return sequence_elements
+sequence = input_sequence()
+
 def get_violating_index():
     for i in range(len(sequence) - 1):
         # print(f"sequence[{i}] < sequence[{i + 1}]", sequence[i] < sequence[i + 1])
@@ -11,6 +17,7 @@ def get_violating_index():
             return i + 1
     return None
 index = get_violating_index()
+
 if index == None:
     print("Ваш список уже строго возрастающий")
 else:

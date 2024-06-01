@@ -2,7 +2,6 @@
 # pylint: disable-msg=C0103
 
 def find_opposite_number(first_number, n):
-
     """Function printing python version."""
     if first_number >= n or first_number < 0:
         print("Данное число не лежит на окружности")
@@ -13,8 +12,8 @@ def find_opposite_number(first_number, n):
         opposite_number = int(first_number + n / 2)
     return opposite_number
 
-def main():
 
+def main():
     """Function printing python version."""
     print("Введите количество чисел на окружности (обязательно четное!): ")
     n = int(input())
@@ -25,5 +24,5 @@ def main():
     opposite_number = find_opposite_number(first_number, n)
     print("Число напротив будет: ", opposite_number)
 
-main()
 
+main()

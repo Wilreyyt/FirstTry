@@ -20,7 +20,7 @@ def main():
     n = int(input())
     if n % 2 != 0 or n <= 0:
         print("Ошибка! Введите число заново")
-        return None
+        return
     first_number = int(input("Введите любое целое число на окружности: "))
     opposite_number = find_opposite_number(first_number, n)
     print("Число напротив будет: ", opposite_number)

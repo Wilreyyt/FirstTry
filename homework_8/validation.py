@@ -9,7 +9,7 @@ def validate(card_number):
 
     control_sum = 0
 
-    for i in range(len(card_number)):
+    for i in enumerate(len(card_number)):
         current_digit = int(card_number[i])
 
         if length_even and i % 2 != 0:

@@ -1,7 +1,9 @@
 """Sequence"""
 # pylint: disable-msg=C0103
 
+
 def input_sequence():
+
     """Function printing python version."""
     sequence_length = int(input("Введите размер последовательности: "))
     sequence_elements = []
@@ -12,7 +14,9 @@ def input_sequence():
 
 sequence = input_sequence()
 
+
 def get_violating_index():
+    
     """Function printing python version."""
     for i in range(len(sequence) - 1):
         # print(f"sequence[{i}] < sequence[{i + 1}]", \
@@ -22,6 +26,7 @@ def get_violating_index():
     return None
 
 index = get_violating_index()
+
 
 if index is None:
     print("Ваш список уже строго возрастающий")

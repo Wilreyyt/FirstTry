@@ -2,6 +2,7 @@
 # pylint: disable-msg=C0103
 
 def validate(card_number):
+
     card_number = str(card_number)
     length_even = len(card_number) % 2 == 0
 
@@ -24,6 +25,8 @@ def validate(card_number):
     return control_sum % 10 == 0
 
 def main():
+
     card_number = input("Введите номер карточки: ")
     print(validate(card_number))
+
 main()

@@ -10,13 +10,16 @@ def find_opposite_number(first_number, n):
     else:
         opposite_number = int(first_number + n / 2)
     return opposite_number
+
 def main():
+
     print("Введите количество чисел на окружности (обязательно четное!): ")
     n = int(input())
-    if n %2 != 0 or n <= 0:
+    if n % 2 != 0 or n <= 0:
         print("Ошибка! Введите число заново")
         return
     first_number = int(input("Введите любое целое число на окружности: "))
     opposite_number = find_opposite_number(first_number, n)
     print("Число напротив будет: ", opposite_number)
+
 main()

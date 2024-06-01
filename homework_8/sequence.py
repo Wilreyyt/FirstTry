@@ -2,20 +2,24 @@
 # pylint: disable-msg=C0103
 
 def input_sequence():
+
     sequence_length = int(input("Введите размер последовательности: "))
     sequence_elements = []
     for k in range(sequence_length):
         element = int(input(f"Введите элемент {k + 1}: "))
         sequence_elements.append(element)
     return sequence_elements
+
 sequence = input_sequence()
 
 def get_violating_index():
+
     for i in range(len(sequence) - 1):
         # print(f"sequence[{i}] < sequence[{i + 1}]", sequence[i] < sequence[i + 1])
         if sequence[i] >= sequence[i + 1]:
             return i + 1
     return None
+
 index = get_violating_index()
 
 if index == None:

@@ -3,6 +3,7 @@
 
 def input_sequence():
 
+
     sequence_length = int(input("Введите размер последовательности: "))
     sequence_elements = []
     for k in range(sequence_length):
@@ -10,7 +11,9 @@ def input_sequence():
         sequence_elements.append(element)
     return sequence_elements
 
+
 sequence = input_sequence()
+
 
 def get_violating_index():
 
@@ -22,13 +25,15 @@ def get_violating_index():
 
 index = get_violating_index()
 
+
 if index == None:
     print("Ваш список уже строго возрастающий")
 else:
     del sequence[index]
     trues_count = 0
     for j in range(len(sequence) - 1):
-        # print(f"sequence[{j}] < sequence[{j + 1}]", sequence[j] < sequence[j + 1])
+        # print(f"sequence[{j}] < sequence[{j + 1}]", /
+        # sequence[j] < sequence[j + 1])
         if sequence[j] < sequence[j + 1]:
             trues_count += 1
     if trues_count == len(sequence) - 1:

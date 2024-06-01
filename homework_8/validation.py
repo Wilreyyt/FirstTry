@@ -1,8 +1,9 @@
 """Validation"""
 # pylint: disable-msg=C0103
 
-def validate(card_number):
 
+def validate(card_number):
+    """Function printing python version."""
     card_number = str(card_number)
     length_even = len(card_number) % 2 == 0
 
@@ -23,9 +24,8 @@ def validate(card_number):
         control_sum += number_check
 
     return control_sum % 10 == 0
-
 def main():
-
+    """Function printing python version."""
     card_number = input("Введите номер карточки: ")
     print(validate(card_number))
 

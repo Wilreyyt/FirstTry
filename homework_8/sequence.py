@@ -1,6 +1,7 @@
 """Sequence"""
 # pylint: disable-msg=C0103
 
+
 def input_sequence():
     """Function printing python version."""
     sequence_length = int(input("Введите размер последовательности: "))
@@ -12,6 +13,7 @@ def input_sequence():
 
 
 sequence = input_sequence()
+
 
 def get_violating_index():
     """Function printing python version."""

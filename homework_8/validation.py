@@ -1,6 +1,7 @@
 """Validation"""
 # pylint: disable-msg=C0103
 
+
 def validate(card_number):
     """Function printing python version."""
     card_number = str(card_number)

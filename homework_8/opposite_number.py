@@ -1,6 +1,7 @@
 """Opposite number"""
 # pylint: disable-msg=C0103
 
+
 def find_opposite_number(first_number, n):
     """Function printing python version."""
     if first_number >= n or first_number < 0:

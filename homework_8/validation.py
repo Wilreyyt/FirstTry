@@ -1,5 +1,4 @@
 """Validation"""
-# pylint: disable-msg=C0103
 
 
 def validate(card_number):
@@ -8,9 +7,10 @@ def validate(card_number):
     length_even = len(card_number) % 2 == 0
 
     control_sum = 0
+    i = 0
 
-    for i in enumerate(len(card_number)):
-        current_digit = int(card_number[i])
+    for char in card_number:
+        current_digit = int(char)
 
         if length_even and i % 2 != 0:
             number_check = current_digit
@@ -22,6 +22,7 @@ def validate(card_number):
                 number_check -= 9
 
         control_sum += number_check
+        i += 1
 
     return control_sum % 10 == 0
 

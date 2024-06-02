@@ -1,5 +1,4 @@
 """Sequence"""
-# pylint: disable-msg=C0103
 
 
 def input_sequence():
@@ -18,8 +17,6 @@ sequence = input_sequence()
 def get_violating_index():
     """Function printing python version."""
     for i in range(len(sequence) - 1):
-        # print(f"sequence[{i}] < sequence[{i + 1}]", \
-        # sequence[i] < sequence[i + 1])
         if sequence[i] >= sequence[i + 1]:
             return i + 1
     return None
@@ -33,8 +30,6 @@ else:
     del sequence[index]
     trues_count = 0
     for j in range(len(sequence) - 1):
-        # print(f"sequence[{j}] < sequence[{j + 1}]", \
-        # sequence[j] < sequence[j + 1])
         if sequence[j] < sequence[j + 1]:
             trues_count += 1
     if trues_count == len(sequence) - 1:

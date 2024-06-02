@@ -23,6 +23,6 @@ def main():
         print("Число напротив будет: ", opposite_number)
     else:
         print("Данное число не лежит на окружности")
-    
+
 
 main()

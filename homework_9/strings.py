@@ -2,6 +2,7 @@
 
 
 def find_index(string_list: list[str], char: str):
+    """Поиск индекса"""
     i = 0
     for current_char in string_list:
         if current_char == char:
@@ -12,6 +13,7 @@ def find_index(string_list: list[str], char: str):
 
 
 def process_string(string: str) -> str:
+    """Убрать решетки и предшествующие символы"""
     string_list = list(string)
 
     index = 0
@@ -28,6 +30,7 @@ def process_string(string: str) -> str:
 
 
 def main():
+    """Основной код программы"""
     string = input("Введите строку: ")
     new_string = process_string(string)
 

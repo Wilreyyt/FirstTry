@@ -2,6 +2,7 @@
 
 
 def append_count(string: str, char: str, count: int) -> str:
+    """Добавить информацию о кол-ве символов в строку"""
     if count == 1:
         return string + char
 
@@ -9,6 +10,7 @@ def append_count(string: str, char: str, count: int) -> str:
 
 
 def count_letters(string: str) -> str:
+    """Подсчет символов в строке"""
     if string == "":
         return ""
 
@@ -31,6 +33,7 @@ def count_letters(string: str) -> str:
 
 
 def main():
+    """Основной код программы"""
     string = input("Введите строку: ")
     result = count_letters(string)
 

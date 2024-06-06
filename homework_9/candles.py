@@ -6,6 +6,7 @@ def count_candles(
         remainder_count: int,
         remainders_for_new: int
 ) -> int:
+    """Подсчет свечей"""
     if candle_count == 0:
         return 0
 
@@ -24,6 +25,7 @@ def count_candles(
 
 
 def main():
+    """Основной код программы"""
     candle_count = int(input("Укажите текущее количество свечей: "))
     remainders_for_new = int(
         input("Сколько остатков нужно, чтобы собрать одну свечу?: ")

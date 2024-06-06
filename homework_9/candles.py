@@ -5,7 +5,7 @@ def count_candles(
         candle_count: int,
         remainder_count: int,
         remainders_for_new: int
-)-> int:
+) -> int:
     if candle_count == 0:
         return 0
 

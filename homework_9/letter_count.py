@@ -4,8 +4,8 @@
 def append_count(string: str, char: str, count: int) -> str:
     if count == 1:
         return string + char
-    else:
-        return string + f"{char}{count}"
+
+    return string + f"{char}{count}"
 
 
 def count_letters(string: str) -> str:

@@ -16,7 +16,7 @@ def process_string(string: str) -> str:
     """Убрать решетки и предшествующие символы"""
     string_list = list(string)
 
-    index = 0
+    index: int | None = 0
     while index is not None:
         index = find_index(string_list, "#")
         if index is None:
@@ -36,5 +36,6 @@ def main():
     assert process_string("abc##d######") == ""
     assert process_string("#######") == ""
     assert process_string("") == ""
+
 
 main()

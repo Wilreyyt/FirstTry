@@ -32,7 +32,11 @@ def main():
         input("Сколько остатков нужно, чтобы собрать одну свечу?: ")
     )
 
-    result = count_candles(candle_count, initial_remainders, remainders_for_new)
+    result = count_candles(
+        candle_count,
+        initial_remainders,
+        remainders_for_new
+    )
 
     print("Всего вы можете сжечь свечей:", result)
 

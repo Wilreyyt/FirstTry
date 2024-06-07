@@ -1,7 +1,7 @@
 """Strings with #"""
 
 
-def find_index(string_list: list[str], char: str):
+def find_index(string_list: list[str], char: str) -> int | None:
     """Поиск индекса"""
     i = 0
     for current_char in string_list:
@@ -20,7 +20,7 @@ def process_string(string: str) -> str:
     while index is not None:
         index = find_index(string_list, "#")
         if index is None:
-            continue
+            break
 
         del string_list[index]
         if index != 0:
@@ -31,10 +31,10 @@ def process_string(string: str) -> str:
 
 def main():
     """Основной код программы"""
-    string = input("Введите строку: ")
-    new_string = process_string(string)
-
-    print(new_string)
-
+    assert process_string("a#bc#d") == "bd"
+    assert process_string("abc#d##c") == "ac"
+    assert process_string("abc##d######") == ""
+    assert process_string("#######") == ""
+    assert process_string("") == ""
 
 main()

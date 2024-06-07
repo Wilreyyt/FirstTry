@@ -34,10 +34,11 @@ def count_letters(string: str) -> str:
 
 def main():
     """Основной код программы"""
-    string = input("Введите строку: ")
-    result = count_letters(string)
-
-    print(result)
+    assert count_letters("cccbba") == "c3b2a"
+    assert count_letters("abeehhhhhccced") == "abe2h5c3ed"
+    assert count_letters("aaabbceedd") == "a3b2ce2d2"
+    assert count_letters("abcde") == "abcde"
+    assert count_letters("aaabbdefffff") == "a3b2def5"
 
 
 main()

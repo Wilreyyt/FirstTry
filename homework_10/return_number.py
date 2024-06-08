@@ -2,9 +2,10 @@
 
 
 def result_is_number(func):
+    """Првоерка типа данных"""
     def wrapper(*args):
         result = func(*args)
-        if not (isinstance(result, int) or isinstance(result, float)):
+        if not isinstance(result, (int, float)):
             print('Функция должна возвращать число')
 
         return result
@@ -14,6 +15,7 @@ def result_is_number(func):
 
 @result_is_number
 def calculate_sum(a, b):
+    """Основной код"""
     return a + b
 
 

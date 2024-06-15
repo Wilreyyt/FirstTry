@@ -22,7 +22,10 @@ class Bank:
 
         for i in range(deposit.term_months):
             days_in_month = monthrange(2024, i % 12 + 1)[1]
-            result_money += round(result_money * percent_coefficient / 366 * days_in_month, 2)
+            result_money += round(
+                result_money * percent_coefficient / 366 * days_in_month,
+                2
+            )
 
         return round(result_money, 2)
 

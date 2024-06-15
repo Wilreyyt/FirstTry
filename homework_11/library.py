@@ -25,7 +25,6 @@ class User:
         self.reserved_books = []
         self.taken_books = []
 
-
     def reserve_book(self, book: Book):
         if book.is_reserved:
             print('Книга уже зарезервирована другими пользователями')
@@ -33,7 +32,6 @@ class User:
 
         self.reserved_books.append(book)
         book.is_reserved = True
-
 
     def take_book(self, book: Book):
         if not book.is_reserved or book in self.reserved_books:
@@ -44,7 +42,6 @@ class User:
 
         if book in self.reserved_books:
             self.reserved_books.remove(book)
-
 
     def pass_book(self, book: Book):
         if book in self.reserved_books:
@@ -61,11 +58,41 @@ class User:
 
 def main():
     books = [
-        Book('World of tanks', 'Kuzovat Kuzovatovich', 200, 12345, False),
-        Book('Chudo8585', 'Kuzovat Kuzovatovich', 180, 12346, False),
-        Book('Adventures of Gadjdukov', 'Kuzovat Kuzovatovich', 500, 12347, False),
-        Book('Kurnos', 'Kuzovat Kuzovatovich', 340, 12348, False),
-        Book('Karp', 'Kuzovat Kuzovatovich', 320, 12349, False),
+        Book(
+            'World of tanks',
+            'Kuzovat Kuzovatovich',
+            200,
+            12345,
+            False
+        ),
+        Book(
+            'Chudo8585',
+            'Kuzovat Kuzovatovich',
+            180,
+            12346,
+            False
+        ),
+        Book(
+            'Adventures of Gadjdukov',
+            'Kuzovat Kuzovatovich',
+            500,
+            12347,
+            False
+        ),
+        Book(
+            'Kurnos',
+            'Kuzovat Kuzovatovich',
+            340,
+            12348,
+            False
+        ),
+        Book(
+            'Karp',
+            'Kuzovat Kuzovatovich',
+            320,
+            12349,
+            False
+        ),
     ]
     users = [
         User('Stepan', 'Bogdan'),

@@ -5,16 +5,19 @@ from calendar import monthrange
 
 
 class Deposit:
+    """Класс вклада"""
     def __init__(self, size: float, term_months: int):
         self.size = size
         self.term_months = term_months
 
 
 class Bank:
+    """Класс банк"""
     def __init__(self, percent: int):
         self.percent = percent
 
     def deposit(self, money, term_years):
+        """Подсчет средств на счету после закрытия депозита"""
         deposit = Deposit(money, term_years * 12)
         percent_coefficient = self.percent / 100
 
@@ -31,6 +34,7 @@ class Bank:
 
 
 def main():
+    """Основной код программы"""
     percent = 10
     bank = Bank(percent)
 

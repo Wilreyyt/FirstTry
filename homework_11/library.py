@@ -2,6 +2,7 @@
 
 
 class Book:
+    """Класс книга"""
     def __init__(
         self,
         name: str,
@@ -18,6 +19,7 @@ class Book:
 
 
 class User:
+    """Класс пользователя"""
     def __init__(self, first_name, last_name):
         self.first_name = first_name
         self.last_name = last_name
@@ -26,6 +28,7 @@ class User:
         self.taken_books = []
 
     def reserve_book(self, book: Book):
+        """Резервирование книги"""
         if book.is_reserved:
             print('Книга уже зарезервирована другими пользователями')
             return
@@ -34,6 +37,7 @@ class User:
         book.is_reserved = True
 
     def take_book(self, book: Book):
+        """Взятие книги"""
         if not book.is_reserved or book in self.reserved_books:
             self.taken_books.append(book)
             book.is_reserved = True
@@ -44,6 +48,7 @@ class User:
             self.reserved_books.remove(book)
 
     def pass_book(self, book: Book):
+        """Сдача книги"""
         if book in self.reserved_books:
             self.reserved_books.remove(book)
             book.is_reserved = False
@@ -57,6 +62,7 @@ class User:
 
 
 def main():
+    """Основной код программы"""
     books = [
         Book(
             'World of tanks',

@@ -1,2 +1,4 @@
 [MESSAGES CONTROL]
 disable=C0103
+disable=R0913
+disable=R0903

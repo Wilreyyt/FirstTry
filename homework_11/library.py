@@ -31,10 +31,11 @@ class User:
         """Резервирование книги"""
         if book.is_reserved:
             print('Книга уже зарезервирована другими пользователями')
-            return
+            return False
 
         self.reserved_books.append(book)
         book.is_reserved = True
+        return True
 
     def take_book(self, book: Book):
         """Взятие книги"""
@@ -47,7 +48,7 @@ class User:
         if book in self.reserved_books:
             self.reserved_books.remove(book)
 
-    def pass_book(self, book: Book):
+    def return_book(self, book: Book):
         """Сдача книги"""
         if book in self.reserved_books:
             self.reserved_books.remove(book)
@@ -119,8 +120,8 @@ def main():
     me.take_book(books[2])
 
     print('Все книги прочитаны\n')
-    me.pass_book(books[2])
-    me.pass_book(books[4])
+    me.return_book(books[2])
+    me.return_book(books[4])
 
     print('Попытка взять книгу другого пользователя:')
     me.take_book(books[1])

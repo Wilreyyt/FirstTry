@@ -77,7 +77,7 @@ class Bank:
             currency_to = get_currency(currency_to_name)
 
         if currency_from is None or currency_to is None:
-            raise Exception()
+            raise ValueError("Указан несуществующий тип валюты")
         dollars = currency_from.to_dollar * count_from
         return round(dollars / currency_to.to_dollar, 2)
 

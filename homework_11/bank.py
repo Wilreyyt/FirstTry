@@ -16,7 +16,7 @@ class Bank:
     def __init__(self, percent: int):
         self.percent = percent
 
-    def deposit(self, money, term_years):
+    def deposit(self, money: float, term_years: int) -> float:
         """Подсчет средств на счету после закрытия депозита"""
         deposit = Deposit(money, term_years * 12)
         percent_coefficient = self.percent / 100

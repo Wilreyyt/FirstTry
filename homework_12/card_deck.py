@@ -29,17 +29,15 @@ class CardDeck:
             for suit in Card.suit_list:
                 card = Card(number, suit)
                 self.cards.append(card)
-        
 
     def shuffle(self):
         """Перемешать колоду"""
         shuffle(self.cards)
 
-
     def get(self, index: int) -> Card:
         """Получить карту по индексу"""
         return self.cards[index]
-    
+
 
 def main():
     """Основной код программы"""

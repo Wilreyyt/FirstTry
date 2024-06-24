@@ -30,7 +30,7 @@ def get_currency(currency_name: str) -> Currency | None:
     for currency in currencies:
         if currency.sign == currency_name:
             return currency
-        
+
     return None
 
 
@@ -61,13 +61,13 @@ class Bank:
             )
 
         return round(result_money, 2)
-    
+
     def exchange_currency(
             self,
             currency_from_name: str,
             count_from: float,
-            currency_to_name: str = None
-        ) -> float:
+            currency_to_name: str | None = None
+            ) -> float:
         """Вычислить курс валюты"""
         currency_from = get_currency(currency_from_name)
 
@@ -76,6 +76,8 @@ class Bank:
         else:
             currency_to = get_currency(currency_to_name)
 
+        if currency_from is None or currency_to is None:
+            raise Exception()
         dollars = currency_from.to_dollar * count_from
         return round(dollars / currency_to.to_dollar, 2)
 

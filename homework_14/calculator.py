@@ -80,8 +80,8 @@ def resolve_operator(lexemes: list[Lexeme], priority: int) -> bool:
     operator = None
     i = 0
     for lexeme in lexemes:
-        if lexeme.type == LexemeTypes.operator and  \
-            OPERATORS_TO_PRIORITY[lexeme.value] == priority:
+        if lexeme.type == LexemeTypes.operator \
+        and OPERATORS_TO_PRIORITY[lexeme.value] == priority:
             operator = lexeme.value
             break
         i += 1

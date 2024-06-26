@@ -84,9 +84,14 @@ def main():
     print("Чтение из файла")
     try:
         students_from_file = read_students_from_file(file_path)
+    except IndexError:
+        print("Произошла ошибка при чтении студентов из файла. Некорректный формат")
+        return
+    except FileNotFoundError:
+        print("Произошла ошибка при чтении студентов из файла. Файл не найден")
+        return
     except Exception:
-        print("Произошла ошибка при чтении студентов из файла. "
-              "Некорректный формат")
+        print("Произошла ошибка при чтении студентов из файла")
         return
 
     print("Число студентов в файле:", len(students_from_file))

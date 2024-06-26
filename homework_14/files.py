@@ -63,10 +63,8 @@ def read_students_from_file(file_path: str) -> list[Student]:
     return students_from_file
 
 
-def main():
-    """Основной код программы"""
-    file_path = "students.txt"
-
+def create_and_read_file(file_path: str) -> list[Student]:
+    """Создать файл со студентами и прочитать его содержимое"""
     students = [
         Student("Maxim Lazar", "Group 1", [7, 8, 6, 7, 9]),
         Student("Kurnos Kuzovatov", "Group 1", [4, 7, 3, 5, 8, 7, 6]),
@@ -82,20 +80,11 @@ def main():
                 file.write(student.to_str())
 
     print("Чтение из файла")
-    try:
-        students_from_file = read_students_from_file(file_path)
-    except IndexError:
-        print("Произошла ошибка при чтении студентов из файла. "
-              "Некорректный формат")
-        return
-    except FileNotFoundError:
-        print("Произошла ошибка при чтении студентов из файла. "
-              "Файл не найден")
-        return
-    except Exception:
-        print("Произошла ошибка при чтении студентов из файла")
-        return
+    return read_students_from_file(file_path)
 
+
+def write_statistics(file_path: str, students_from_file: list[Student]):
+    """Вывести статистику о студентах"""
     print("Число студентов в файле:", len(students_from_file))
 
     students_by_groups = get_count_by_groups(students_from_file)
@@ -114,6 +103,30 @@ def main():
             file.write("Student count by groups\n")
             for group, count in students_by_groups.items():
                 file.write(f"{group}: {count}\n")
+
+
+def main():
+    """Основной код программы"""
+    file_path = "students.txt"
+
+    try:
+        students_from_file = create_and_read_file(file_path)
+    except IndexError:
+        print("Произошла ошибка при чтении студентов из файла. "
+              "Некорректный формат")
+        return
+    except FileNotFoundError:
+        print("Произошла ошибка при чтении студентов из файла. "
+              "Файл не найден")
+        return
+    except Exception:
+        print("Произошла ошибка при чтении студентов из файла")
+        return
+
+    try:
+        write_statistics(file_path, students_from_file)
+    except FileNotFoundError:
+        print("Произошла ошибка записи информации в файл")
 
 
 main()

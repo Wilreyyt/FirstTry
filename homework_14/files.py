@@ -37,7 +37,7 @@ def read_student_from_string(string: str) -> Student:
 
 def get_count_by_groups(studens: list[Student]) -> dict[str, int]:
     """Посчитать количество студентов по группам"""
-    result = dict()
+    result = {}
     for student in studens:
         if student.group not in result:
             result[student.group] = 0
@@ -49,8 +49,8 @@ def get_count_by_groups(studens: list[Student]) -> dict[str, int]:
 
 def read_students_from_file(file_path: str) -> list[Student]:
     """Прочитать студентов из файла"""
-    students_from_file = []
-    with open(file_path, "r") as file:
+    students_from_file: list[Student] = []
+    with open(file_path, "r", encoding="UTF-8") as file:
         for line in file.readlines():
             if line == '\n':
                 continue
@@ -77,7 +77,7 @@ def main():
 
     if not os.path.exists(file_path):
         print("Запись в файл")
-        with open(file_path, "w") as file:
+        with open(file_path, "w", encoding="UTF-8") as file:
             for student in students:
                 file.write(student.to_str())
 
@@ -95,13 +95,13 @@ def main():
     print("Количество студентов по группам:", students_by_groups)
 
     has_statistics = False
-    with open(file_path, "r") as file:
+    with open(file_path, "r", encoding="UTF-8") as file:
         for line in file.readlines():
             if "Number of students:" in line:
                 has_statistics = True
 
     if not has_statistics:
-        with open(file_path, "a") as file:
+        with open(file_path, "a", encoding="UTF-8") as file:
             file.write(f"\nNumber of students: {len(students_from_file)}\n\n")
 
             file.write("Student count by groups\n")

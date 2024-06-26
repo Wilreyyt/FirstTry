@@ -15,7 +15,7 @@ OPERATORS_TO_PRIORITY = {
 
 class LexemeTypes(Enum):
     """Типы лексем"""
-    operator = "operator",
+    operator = "operator"
     number = "number"
 
 
@@ -81,7 +81,7 @@ def resolve_operator(lexemes: list[Lexeme], priority: int) -> bool:
     i = 0
     for lexeme in lexemes:
         if lexeme.type == LexemeTypes.operator \
-        and OPERATORS_TO_PRIORITY[lexeme.value] == priority:
+            and OPERATORS_TO_PRIORITY[lexeme.value] == priority:
             operator = lexeme.value
             break
         i += 1

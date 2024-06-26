@@ -41,7 +41,7 @@ def get_count_by_groups(studens: list[Student]) -> dict[str, int]:
     for student in studens:
         if student.group not in result:
             result[student.group] = 0
-        
+
         result[student.group] += 1
 
     return result
@@ -85,7 +85,8 @@ def main():
     try:
         students_from_file = read_students_from_file(file_path)
     except Exception:
-        print("Произошла ошибка при чтении студентов из файла. Некорректный формат")
+        print("Произошла ошибка при чтении студентов из файла. "
+              "Некорректный формат")
         return
 
     print("Число студентов в файле:", len(students_from_file))

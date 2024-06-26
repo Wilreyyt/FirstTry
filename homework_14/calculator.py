@@ -28,12 +28,12 @@ class Lexeme:
 
 def parse_lexemes(lexemes: list[str]) -> list[Lexeme]:
     """Переводит строковые значения символов в лексемы"""
-    result = []
-    for lexeme in lexemes:
-        if lexeme in OPERATORS_TO_PRIORITY:
-            lexeme = Lexeme(lexeme, LexemeTypes.operator)
+    result: list[Lexeme] = []
+    for str_lexeme in lexemes:
+        if str_lexeme in OPERATORS_TO_PRIORITY:
+            lexeme = Lexeme(str_lexeme, LexemeTypes.operator)
         else:
-            number = float(lexeme)
+            number = float(str_lexeme)
             lexeme = Lexeme(str(number), LexemeTypes.number)
 
         result.append(lexeme)
@@ -71,7 +71,7 @@ def calculate_operator(a: float, b: float, operator: str) -> float:
         return a + b
     if operator == '-':
         return a - b
-    
+
     raise ValueError("Некорректный оператор")
 
 
@@ -81,7 +81,7 @@ def resolve_operator(lexemes: list[Lexeme], priority: int) -> bool:
     i = 0
     for lexeme in lexemes:
         if lexeme.type == LexemeTypes.operator \
-            and OPERATORS_TO_PRIORITY[lexeme.value] == priority:
+        and OPERATORS_TO_PRIORITY[lexeme.value] == priority:
             operator = lexeme.value
             break
         i += 1

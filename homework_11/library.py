@@ -24,8 +24,8 @@ class User:
         self.first_name = first_name
         self.last_name = last_name
 
-        self.reserved_books = []
-        self.taken_books = []
+        self.reserved_books: list[Book] = []
+        self.taken_books: list[Book] = []
 
     def reserve_book(self, book: Book):
         """Резервирование книги"""

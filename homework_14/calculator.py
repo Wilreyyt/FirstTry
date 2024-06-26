@@ -75,13 +75,23 @@ def calculate_operator(a: float, b: float, operator: str) -> float:
     raise ValueError("Некорректный оператор")
 
 
+def is_current_operator(lexeme: Lexeme, priority: int) -> bool:
+    """
+    Проверка, является ли лексема текущим оператором,
+    который нужно выполнить
+    """
+    if lexeme.type != LexemeTypes.operator:
+        return False
+
+    return OPERATORS_TO_PRIORITY[lexeme.value] == priority
+
+
 def resolve_operator(lexemes: list[Lexeme], priority: int) -> bool:
     """Выполнить вычисление одного оператора в списке лексем"""
     operator = None
     i = 0
     for lexeme in lexemes:
-        if lexeme.type == LexemeTypes.operator \
-        and OPERATORS_TO_PRIORITY[lexeme.value] == priority:
+        if is_current_operator(lexeme, priority):
             operator = lexeme.value
             break
         i += 1

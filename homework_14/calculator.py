@@ -97,7 +97,7 @@ def resolve_operator(lexemes: list[Lexeme], priority: int) -> bool:
         del lexemes[i - 1]
 
         return True
-    
+
     return False
 
 
@@ -106,7 +106,7 @@ def calculate_result(expression: str) -> float:
     lexemes = parse_lexemes(expression.split())
     if not validate_lexemes(lexemes):
         raise ValueError("Выражение некорректно")
-    
+
     first_priority = min(OPERATORS_TO_PRIORITY.values())
     last_priority = max(OPERATORS_TO_PRIORITY.values())
 
@@ -114,7 +114,6 @@ def calculate_result(expression: str) -> float:
         next_available = True
         while next_available:
             next_available = resolve_operator(lexemes, priority)
-                
 
     return float(lexemes[0].value)
 

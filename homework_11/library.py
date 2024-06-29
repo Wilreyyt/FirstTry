@@ -27,7 +27,7 @@ class User:
         self.reserved_books: list[Book] = []
         self.taken_books: list[Book] = []
 
-    def reserve_book(self, book: Book):
+    def reserve_book(self, book: Book) -> bool:
         """Резервирование книги"""
         if book.is_reserved:
             print('Книга уже зарезервирована другими пользователями')

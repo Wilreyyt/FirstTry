@@ -9,7 +9,7 @@ class Card:
     number_list = [
         'T', '2', '3', '4', '5',
         '6', '7', '8', '9', '10',
-        'J', 'Q', 'K', 'Joker'
+        'J', 'Q', 'K'
     ]
     suit_list = [
         'Spades', 'Hearts',
@@ -29,6 +29,8 @@ class CardDeck:
             for suit in Card.suit_list:
                 card = Card(number, suit)
                 self.cards.append(card)
+        self.cards.append(Card("Joker", "Black"))
+        self.cards.append(Card("Joker", "Red"))
 
     def shuffle(self):
         """Перемешать колоду"""

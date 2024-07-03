@@ -66,15 +66,11 @@ class Bank:
             self,
             currency_from_name: str,
             count_from: float,
-            currency_to_name: str | None = None
+            currency_to_name: str = 'BYN'
             ) -> float:
         """Вычислить курс валюты"""
         currency_from = get_currency(currency_from_name)
-
-        if currency_to_name is None:
-            currency_to = get_currency('BYN')
-        else:
-            currency_to = get_currency(currency_to_name)
+        currency_to = get_currency(currency_to_name)
 
         if currency_from is None or currency_to is None:
             raise ValueError("Указан несуществующий тип валюты")
